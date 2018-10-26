@@ -1,0 +1,24 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8765
+
+spring:
+  application:
+    name: service-feign
+  ##zipkin 配置 独立运行的服务器
+  zipkin:
+    base-url: http://127.0.0.1:9411
+    sender:
+      type: rabbit
+  sleuth:
+    sampler:
+      probability: 1.0
+    ##rabbitmq
+    rabbitmq:
+      username: rabbit
+      password: rabbitmq
+      host: 127.0.0.1
+      port: 5672
