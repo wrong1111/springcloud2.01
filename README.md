@@ -35,8 +35,14 @@ springcloud2.0 + feigen+zuul+eurake+zipkin一整套代码，并且已经实际�
   # Build the server and also make its dependencies
   ./mvnw -DskipTests --also-make -pl zipkin-server clean install
   # Run the server
-  java -jar ./zipkin-server/target/zipkin-server-*exec.jar
-  java -jar zipkin.jar --zipkin.collector.rabbitmq.addresses=192.168.174.128
+   
+  java -jar ./zipkin-server/target/zipkin-server-*exec.jar 
+
+  配合rabbit启动参数如下
+nohup java -jar ./zipkin-server/target/zipkin-server-2.11.13-SNAPSHOT-exec.jar -Xmx128M -Xms128M  --zipkin.collector.rabbitmq.addresses=14.17.81.102 --zipkin.collector.rabbitmq.username=rabbit --zipkin.collector.rabbitmq.password=rabbitmq  >zipkin.log 2>&1 &
+
+其他参数
+ http://file.xuahua.com/images/zipkin.png
   
 
 
