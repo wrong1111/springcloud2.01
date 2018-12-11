@@ -36,7 +36,7 @@ springcloud2.0 + feigen+zuul+eurake+zipkin一整套代码，并且已经实际�
   ./mvnw -DskipTests --also-make -pl zipkin-server clean install
   # Run the server
   java -jar ./zipkin-server/target/zipkin-server-*exec.jar
-  
+  java -jar zipkin.jar --zipkin.collector.rabbitmq.addresses=192.168.174.128
   
 
 
