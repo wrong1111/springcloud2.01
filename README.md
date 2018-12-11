@@ -29,15 +29,15 @@ springcloud2.0 + feigen+zuul+eurake+zipkin一整套代码，并且已经实际�
    java -jar zipkin.jar --zipkin.collector.rabbitmq.addresses=xxxxx --zipkin.collector.rabbitmq.password=rabbitmq --zipkin.collector.rabbitmq.username=rabbit
    
 2， 源码编译安装
-  # get the latest source
-  git clone https://github.com/openzipkin/zipkin
-  cd zipkin
-  # Build the server and also make its dependencies
-  ./mvnw -DskipTests --also-make -pl zipkin-server clean install
-  # Run the server
-   
-  java -jar ./zipkin-server/target/zipkin-server-*exec.jar 
-
+  2.1 get the latest source
+      git clone https://github.com/openzipkin/zipkin
+      cd zipkin
+  
+  2.2  build the server and also make its dependencies
+     ./mvnw -DskipTests --also-make -pl zipkin-server clean install
+  2.3 run the zipkin
+     java -jar ./zipkin-server/target/zipkin-server-*exec.jar 
+  
   配合rabbit启动参数如下
 nohup java -jar ./zipkin-server/target/zipkin-server-2.11.13-SNAPSHOT-exec.jar -Xmx128M -Xms128M  --zipkin.collector.rabbitmq.addresses=14.17.81.102 --zipkin.collector.rabbitmq.username=rabbit --zipkin.collector.rabbitmq.password=rabbitmq  >zipkin.log 2>&1 &
 
